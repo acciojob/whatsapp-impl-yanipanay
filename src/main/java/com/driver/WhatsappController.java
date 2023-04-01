@@ -26,7 +26,6 @@ public class WhatsappController {
     public String createUser(String name, String mobile) throws Exception {
         //If the mobile number exists in database, throw "User already exists" exception
         //Otherwise, create the user and return "SUCCESS"
-
         return whatsappService.createUser(name, mobile);
     }
 
@@ -48,7 +47,6 @@ public class WhatsappController {
     public int createMessage(String content){
         // The 'i^th' created message has message id 'i'.
         // Return the message id.
-
         return whatsappService.createMessage(content);
     }
 
@@ -79,7 +77,8 @@ public class WhatsappController {
         //If user is not the admin, remove the user from the group, remove all its messages from all the databases, and update relevant attributes accordingly.
         //If user is removed successfully, return (the updated number of users in the group + the updated number of messages in group + the updated number of overall messages)
 
-        return whatsappService.removeUser(user);
+        return 0;
+                //whatsappService.removeUser(user);
     }
 
     @GetMapping("/find-messages")
@@ -88,6 +87,7 @@ public class WhatsappController {
         // Find the Kth latest message between start and end (excluding start and end)
         // If the number of messages between given time is less than K, throw "K is greater than the number of messages" exception
 
-        return whatsappService.findMessage(start, end, K);
+        return "";
+                //whatsappService.findMessage(start, end, K);
     }
 }
